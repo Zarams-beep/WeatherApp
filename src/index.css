@@ -12,7 +12,6 @@
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   margin: -1rem;
-  padding-bottom: 2000px;
 }
 
 .FirstHeader{
@@ -253,8 +252,7 @@
 .mainsectionWeather{
   margin-top: 2rem;
   padding-right: 2rem;
-  color: white;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .mainsectionWeather ul{
   display: grid;
