@@ -21,6 +21,7 @@
   padding-left: 4rem;
   padding-right: 4rem;
   box-shadow: 0 0 2px 0.5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 
 .contactSection{
@@ -68,7 +69,7 @@
   padding-left: .5rem;
   padding-right: .5rem;
   transform: translateX(100%);
-  z-index: 2;
+  z-index: 50;
   
 }
 .moveRight{
@@ -109,6 +110,7 @@
   background-repeat: no-repeat;
   height: auto;
   padding-bottom: 8rem;
+  overflow-x: hidden;
 }
 .section1{
   display: grid;
@@ -250,6 +252,7 @@
   margin-top: 2rem;
   padding-right: 2rem;
   color: white;
+  overflow-x: hidden;
 }
 .mainsectionWeather ul{
   display: grid;
@@ -268,11 +271,12 @@
 }
 .mainsectionWeather .sectionWeather{
   position: absolute;
-  top: 2rem;
-  display: flex;
-  align-items: center;
+  top: 6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
   padding-left: 2rem;
-  gap: 15rem;
+  gap: 1rem;
+  width: 100%;
 }
 .sectionWeather .weatherNotes{
   line-height: 0;
