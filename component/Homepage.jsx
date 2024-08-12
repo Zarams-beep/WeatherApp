@@ -205,6 +205,11 @@ const HomePage=()=>{
                     </div>
                 </div>
             </main>
+
+            {/* second part */}
+            <section className="second2">
+                
+            </section>
         </>
     )
 

@@ -68,6 +68,7 @@
   padding-left: .5rem;
   padding-right: .5rem;
   transform: translateX(100%);
+  z-index: 2;
   
 }
 .moveRight{
@@ -252,7 +253,7 @@
 }
 .mainsectionWeather ul{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 2rem;
 }
 .mainsectionWeather li{
