@@ -232,6 +232,12 @@
   .divSun1,.divSun2{
     line-height: .8rem;
   }
+  .leftPart h1{
+    font-size: 2.4rem;
+  }
+  .section1{
+    padding-top: 0;
+  }
 }
 .hue{
   color: beige;
@@ -285,4 +291,21 @@
   display: flex;
   align-items: center;
   font-size: 2rem;
+}
+.noResult{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 9rem;
+  left: 1rem;
+  right: 1rem;
+  color: black;
+}
+.noSearch h2{
+  text-align: center;
+  font-size: 2.5rem;
+}
+.noSearch p{
+  font-size: 1.2rem;
 }

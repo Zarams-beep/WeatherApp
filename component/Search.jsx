@@ -87,7 +87,12 @@ const Search = ()=>{
                         ))}
                     </ul>
                 ):(
-                    <p>No items to display</p>
+                   <section className="noResult">
+                     <div className="noSearch">
+                        <h2>Nothing Found</h2>
+                        <p>Sorry, but nothing matched your search terms. Please try again with some different keywords.</p>
+                    </div>
+                   </section>
                 )}
            </section>
         </>
