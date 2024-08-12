@@ -1,0 +1,288 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  margin: -1rem;
+}
+
+.FirstHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  box-shadow: 0 0 2px 0.5px rgba(0, 0, 0, 0.3);
+}
+
+.contactSection{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+.notes,.socialMedia{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.invisible{
+  display: none;
+}
+.stickIt{
+  position: fixed;
+  top: 15%;
+  right: 0rem;
+  z-index: 1000;
+  background-color:rgb(214, 212, 212);
+  font-weight: bold;
+  width: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding-left: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+.menuStyle .icon{
+  font-size: 2rem;
+}
+.notesShow{
+  position: absolute;
+  top: 3rem;
+  right: -2rem;
+  background-color: whitesmoke;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  transform: translateX(100%);
+  
+}
+.moveRight{
+  animation: opacityRight 3s forwards;
+}
+@keyframes opacityRight {
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(150%);
+  }
+}
+.visible{
+  animation: moveRight 3s forwards;
+  opacity: 1;
+}
+@media all and (max-width:690px) {
+  .FirstHeader{
+    padding-left: 2rem;
+  }
+  .notes,.socialMedia{
+  gap: 1rem;
+}
+}
+.iconStyle{
+  color: rgb(94, 91, 91);
+  transition: color .3s ease-in-out,cursor .3s ease-in-out;
+}
+.iconStyle:hover{
+  color: black;
+  cursor: pointer;
+}
+.intro{
+  background-image: url('/mateus-campos-felipe-K5JcwDBrYKo-unsplash.jpg');
+  background-position: right;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  padding-bottom: 8rem;
+}
+.section1{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2rem;
+  padding-left: 2rem;
+  padding-top: 5rem;
+  padding-right: 2rem;
+}
+@keyframes moveLeft {
+  from{
+    transform: translateX(-100%);
+  }
+  to{
+    transform: translateX(0%);
+  }
+}
+.leftPart{
+  animation: moveLeft 3s forwards;
+}
+.leftPart h1{
+  font-size: 2.8rem;
+  width: 80%;
+}
+.leftPart button{
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+  border: 1px solid black;
+  border-radius: 3rem;
+  width: 80%;
+}
+.leftPart button input{
+  width: 25rem;
+  padding-top: .6rem;
+  padding-bottom: .6rem;
+  padding-left: .5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.iconSearch{
+  font-size: 2rem;
+  transition: color .3s ease-in-out;
+}
+.iconSearch:hover{
+  color: blue;
+}
+@keyframes moveRight {
+  from{
+    transform: translateX(100%);
+  }
+  to{
+    transform: translateX(0%);
+  }
+}
+.rightPart{
+ width: 100%;
+  box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.3);
+  padding-bottom: 2rem; 
+  padding-right: 2rem;
+  animation: moveRight 3s forwards;
+}
+.rightPart .firstPart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.rightPart .icon{
+  font-size: 5rem;
+}
+.snow{
+  color: cornflowerblue;
+}
+.cloudy{
+  color:lightskyblue;
+}
+.partlysunny,.sunny{
+  color: rgb(255, 217, 0);
+}
+.stateContainer .state{
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.stateContainer .city{
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 0;
+}
+.temp{
+  padding-top: 0;
+  font-size: 2rem;
+}
+.secondPart .iconSmall{
+  font-size: 2rem;
+}
+.secondPart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sun{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: block;
+}
+.divSun1,.divSun2{
+  display: flex;
+  align-items: center;
+  line-height: .4rem;
+  padding-left: 2rem;
+  gap: .5rem;
+}
+@media all and (max-width:380px) {
+  .divSun1,.divSun2{
+    line-height: .8rem;
+  }
+}
+.hue{
+  color: beige;
+}
+.link{
+  color: black;
+}
+.mainsectionWeather{
+  margin-top: 2rem;
+  padding-right: 2rem;
+  color: white;
+}
+.mainsectionWeather ul{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+.mainsectionWeather li{
+  position: relative;
+  list-style: none;
+}
+.mainsectionWeather li img{
+  width: 100%;
+  height: 20rem;
+  filter: brightness(50%);
+  border-radius: 2rem;
+}
+.mainsectionWeather .sectionWeather{
+  position: absolute;
+  top: 2rem;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  gap: 15rem;
+}
+.sectionWeather .weatherNotes{
+  line-height: 0;
+}
+.sectionWeather .weatherNotes2{
+  line-height: .5rem;
+}
+.sectionWeather .weatherNotes2 h5{
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.notesCon{
+  line-height: 0;
+  margin-bottom: -1rem;
+}
+.weatherDiv{
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
