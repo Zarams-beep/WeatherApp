@@ -22,7 +22,7 @@
   padding-left: 4rem;
   padding-right: 4rem;
   box-shadow: 0 0 2px 0.5px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
 }
 
@@ -70,7 +70,6 @@
   background-color: whitesmoke;
   padding-left: .5rem;
   padding-right: .5rem;
-  transform: translateX(100%);
   z-index: 100;
   
 }
@@ -112,7 +111,7 @@
   background-repeat: no-repeat;
   height: auto;
   padding-bottom: 8rem;
-  margin-left: -1rem;
+  margin-right: -1rem;
   overflow-x: hidden;
 }
 .section1{
