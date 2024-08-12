@@ -12,6 +12,7 @@
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   margin: -1rem;
+  padding-bottom: 2000px;
 }
 
 .FirstHeader{
@@ -22,6 +23,7 @@
   padding-right: 4rem;
   box-shadow: 0 0 2px 0.5px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  position: relative;
 }
 
 .contactSection{
@@ -69,7 +71,7 @@
   padding-left: .5rem;
   padding-right: .5rem;
   transform: translateX(100%);
-  z-index: 50;
+  z-index: 100;
   
 }
 .moveRight{
@@ -110,6 +112,7 @@
   background-repeat: no-repeat;
   height: auto;
   padding-bottom: 8rem;
+  margin-left: -1rem;
   overflow-x: hidden;
 }
 .section1{
