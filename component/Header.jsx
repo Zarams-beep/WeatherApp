@@ -18,7 +18,7 @@ const Header=()=>{
             <header>
                 <div className="FirstHeader">
                     <div className="divh2">
-                        <h2>WeatherWhirl</h2>
+                        <Link to='/' style={{textDecoration:'none', color: 'black'}}><h2>WeatherWhirl</h2></Link>
                     </div>
 
                     <div className={`contactSection`}>
