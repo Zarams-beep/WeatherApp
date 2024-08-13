@@ -7,6 +7,8 @@ import Header from "./Header";
 import { Link } from "react-router-dom";
 import { MdArrowOutward } from "react-icons/md";
 import WorldFlags from 'react-world-flags';
+import FloatingSocial from "./FloatingSocial";
+
 const HomePage=()=>{
     const [data,setData] = useState([])
     const [loading,setLoading] = useState(true)
@@ -168,6 +170,9 @@ const HomePage=()=>{
     
     return(
         <>
+            <body>
+                
+            <FloatingSocial/>
             <main className="intro">
                 <Header/>
                 <div className="section1">
@@ -457,7 +462,7 @@ const HomePage=()=>{
 
                 
                 </div>
-            </section>
+            </section></body>
         </>
     )
 

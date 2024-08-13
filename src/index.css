@@ -104,6 +104,9 @@
   color: black;
   cursor: pointer;
 }
+body{
+  position: relative;
+}
 .intro{
   background-image: url('/mateus-campos-felipe-K5JcwDBrYKo-unsplash.jpg');
   background-position: right;
@@ -112,7 +115,7 @@
   height: auto;
   padding-bottom: 8rem;
   margin-right: -1rem;
-  overflow-x: hidden;
+
 }
 .section1{
   display: grid;
@@ -424,8 +427,8 @@
   font-size: 2rem;
   /* line-height: .5rem; */
 }
-.section3{
-}
+/* .section3{
+} */
 .section3 ul{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
