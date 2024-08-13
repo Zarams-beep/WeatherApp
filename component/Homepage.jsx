@@ -5,6 +5,8 @@ import { WiSunrise, WiSunset,WiHumidity } from "react-icons/wi";
 import { FaWind } from "react-icons/fa";
 import Header from "./Header";
 import { Link } from "react-router-dom";
+import { MdArrowOutward } from "react-icons/md";
+import WorldFlags from 'react-world-flags';
 const HomePage=()=>{
     const [data,setData] = useState([])
     const [loading,setLoading] = useState(true)
@@ -19,6 +21,8 @@ const HomePage=()=>{
     const [windSpeed,setWindSpeed] = useState([])
     const [matching,setMatching] = useState('')
     const [matchingSearch,setMatchingSearch] = useState([])
+    const [countryCode, setCountryCode] = useState({})
+    const [uniCountry, setUniCountry] = useState([])
 
     useEffect(()=>{
         if (navigator.geolocation){
@@ -90,6 +94,9 @@ const HomePage=()=>{
         }
     };
     
+    const countries_abbreviations = [
+        'US', 'GB', 'US', 'JP', 'IN', 'US', 'CA', 'AU', 'FR', 'RU', 'MX', 'BR', 'EG', 'CN', 'BR', 'TR', 'IN', 'DE', 'AE', 'KR', 'NZ', 'ES', 'ZA', 'CU', 'CA', 'JP', 'PE', 'KE', 'NO', 'CH', 'JP', 'SA', 'CO', 'ID', 'AR', 'ZA', 'SG', 'TW', 'IR', 'CA',
+        'AU', 'AU', 'AU', 'AU', 'AU', 'NZ', 'NZ', 'NZ', 'GB', 'IE', 'PK']
 
     useEffect(() => {
         if (data.length > 0) {
@@ -100,6 +107,10 @@ const HomePage=()=>{
             setTemp(data.map((weather) => weather.temperature));
             setWeatherDesc(data.map((weather) => weather.weather_description));
             setWindSpeed(data.map((weather) => weather.wind_speed));
+            // setUniCountry([...new Set(country)])
+            const uniCou = [...new Set(data.map((weather) => weather.country))];
+            setUniCountry(uniCou);
+    
 
             // map temperature
             // Match location
@@ -117,19 +128,31 @@ const HomePage=()=>{
                     data[2].city, data[2].temperature,getWeatherCondition(data[2].temperature), data[2].humidity,data[2].wind_speed]
                 )
             }
-            
         }
     }, [data, location]);
 
-    useEffect(()=>{
+    useEffect(() => {
+        const obj = {};
         
-        console.log(matchingSearch);
-        
-    },[matchingSearch])
+        data.forEach((d, index) => {
+          if (index < countries_abbreviations.length) {
+            obj[d.country] = countries_abbreviations[index];
+          }
+        });
     
-    const searchBar =()=>{
-        const valueInput = document.querySelector('.inputValue')
-        const matchSearch = data.filter((weather)=>weather.country.toLowerCase()===valueInput.value.toLowerCase())
+        setCountryCode(obj);
+      }, []); 
+
+      
+    useEffect(()=>{
+        console.log(uniCountry);
+
+    },[uniCountry])
+    
+    const searchBar =(valueInput)=>{
+        const inputString = typeof valueInput === 'string' ? valueInput : valueInput.textContent;
+
+        const matchSearch = data.filter((weather)=>weather.country.toLowerCase()===inputString.toLowerCase())
         if (matchSearch){setMatchingSearch(matchSearch)
             console.log("Match found:", matchSearch);
             localStorage.setItem('matchSearch', JSON.stringify(matchSearch)||'none')
@@ -140,7 +163,9 @@ const HomePage=()=>{
         }
         
     };
-   
+
+  
+    
     return(
         <>
             <main className="intro">
@@ -151,7 +176,7 @@ const HomePage=()=>{
                         <button>
                             <input type="text" placeholder="Search for a place..." className="inputValue"/>
                             <Link to = '/search' className="link"><IoSearch className="iconSearch" onClick={
-                                searchBar
+                               ()=> {searchBar(document.querySelector('.inputValue').value)}
                             }/></Link>
                         </button>
                     </div>
@@ -208,7 +233,230 @@ const HomePage=()=>{
 
             {/* second part */}
             <section className="second2">
+                <section className="sectionSecond1">
+                    <h2>Your #1 source of any weather forecasts and updates.</h2>
+                    <p>Stay updated of any weather changes with WeatherWhirl.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ex, iusto rerum vel voluptatem eaque corporis corrupti dolores molestiae velit doloribus. Dolorum ratione pariatur quas laboriosam inventore? Itaque, officiis quidem?</p>
+                </section>
+
+                <section className="sectionSecond2">
+                    {/* first */}
+                    <section className="smallerSecond">
+                        <div className="upper">
+                            <p>{getIcons(getWeatherCondition(temp[4]))}</p>
+                            <div className="countryContainer">
+                            <p>{country[4]}</p>
+                            <p className="name">{getWeatherCondition(temp[4])}</p>
+                            </div>
+                            <p>{temp[4]}&deg;</p>
+                        </div>
+
+                        <div className="middleCover">
+                        <div className="middle">
+                            <div className="middlePart">
+                                <WiSunrise/>
+                                <div className="divsmallest">
+                                    <p>Sunrise</p>
+                                    <p>05:45 AM</p>
+                                </div>
+                            </div>
+
+                            <div className="middlePart">
+                                <WiSunset/>
+                                <div className="divsmallest">
+                                    <p>Sunset</p>
+                                    <p>08:45 PM</p>
+                                </div>
+                            </div>
+
+                            <div className="middlePart">
+                                <WiHumidity/>
+                                <div className="divsmallest">
+                                    <p>Humidity</p>
+                                    <p>{humidity[4]}%</p>
+                                </div>
+                            </div>
+
+                            <div className="middlePart">
+                                <FaWind/>
+                                <div className="divsmallest">
+                                    <p>Wind Speed</p>
+                                    <p>{windSpeed[4]}%</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </section>
+
+                    {/* second */}
+                    <section className="smallerSecond2">
+                        <div className="upper">
+                            <p>{getIcons(getWeatherCondition(temp[4]))}</p>
+                            <div className="countryContainer">
+                            <p>{country[4]}</p>
+                            <p className="name">{getWeatherCondition(temp[4])}</p>
+                            </div>
+                            <p>{temp[4]}&deg;</p>
+                        </div>
+
+                        <div className="middleCover">
+                        <div className="middle">
+                            <div className="middlePart">
+                                <WiSunrise/>
+                                <div className="divsmallest">
+                                    <p>Sunrise</p>
+                                    <p>05:45 AM</p>
+                                </div>
+                            </div>
+
+                            <div className="middlePart">
+                                <WiSunset/>
+                                <div className="divsmallest">
+                                    <p>Sunset</p>
+                                    <p>08:45 PM</p>
+                                </div>
+                            </div>
+
+                            <div className="middlePart">
+                                <WiHumidity/>
+                                <div className="divsmallest">
+                                    <p>Humidity</p>
+                                    <p>{humidity[4]}%</p>
+                                </div>
+                            </div>
+
+                            <div className="middlePart">
+                                <FaWind/>
+                                <div className="divsmallest">
+                                    <p>Wind Speed</p>
+                                    <p>{windSpeed[4]}%</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </section>
+                </section>
+            </section>
+
+            {/* third part */}
+            <section className="thirdPart">
+                <h1>World weather forecast</h1>
+                <p>Please select a country</p>
+                <section className="section3">
+                <ul>
+                    {uniCountry.map((el, index) => (
+                        <li key={index}>
+                            <div className="flagContainer" >
+                            <div className="flag2">
+                                <WorldFlags 
+                                    code={countryCode[el]} 
+                                    alt={`${el} Flag`} 
+                                    className="flagIcon"
+                                />
+                                <Link to='/search' className="link">
+                                <p className="country" onClick={(event) => {
+                                    searchBar(event.target)
+                                    
+                                }}>{el}</p>
+                                </Link>
+                            </div>
+                            <MdArrowOutward className="icon"/>
+                            </div>
+                       
+                    </li>
+                    ))}
+                </ul>
+                </section>
+            </section>
+
+            {/* fourth part */}
+            <article className="fourthPart">
+                <section className="newsHeader">
+                    <div className="part1">
+                        <h2>Weather forecast news</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio assumenda delectus cum accusamus expedita laboriosam porro illo veniam tenetur, magni, dicta ea labore fugit. Ad laborum praesentium iste earum officiis?</p>
+
+                    </div>
+
+                    <Link to="/">VIEW ALL</Link>
+                </section>
+
+                <section className="newsSection">
+                    <Link className="newGird link">
+                        <img src="/scott-goodwill-7KrWmnpRafw-unsplash.jpg" alt="climate change" />
+                        <h3>Climate Change: Earth's Greatest Enemy</h3>
+                    </Link>
+
+                    <Link className="newGird link">
+                        <img src="/casey-callahan-uZiCdhLyXwM-unsplash.jpg" alt="Snow Storm" />
+                        <h3>Wild Snow Storm! Stay Indoors</h3>
+                    </Link>
+
+                    <Link className="newGird link">
+                        <img src="/trail-bFRkux6F2Pc-unsplash.jpg" alt="nature" />
+                        <h3>Our Natural Environment is not Dead</h3>
+                    </Link>
+                </section>
+            </article>
+
+            {/* fifth part */}
+            <section className="fifthPart">
+                <div className="part1">
+                    <h2>Avoid Weather Surpises</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas placeat debitis sed iure iste, similique quaerat soluta deserunt officia, error itaque modi temporibus, ipsum cupiditate necessitatibus sequi iusto alias adipisci.</p>
+                </div>
+
+                <div className="part2">
+               
+                    <section className="smallerSecond3">
+                        <div className="upper">
+                            <p>{getIcons(getWeatherCondition(temp[10]))}</p>
+                            <div className="countryContainer">
+                            <p className="countryName">{country[10]}</p>
+                            <p className="name">{getWeatherCondition(temp[10])}</p>
+                            </div>
+                            <p>{temp[10]}&deg;</p>
+                        </div>
+
+                        <div className="middleCover">
+                        <div className="middle">
+                            <div className="middlePart">
+                                <WiSunrise/>
+                                <div className="divsmallest">
+                                    <p>Sunrise</p>
+                                    <p>05:45 AM</p>
+                                </div>
+                            </div>
+
+                            <div className="middlePart">
+                                <WiSunset/>
+                                <div className="divsmallest">
+                                    <p>Sunset</p>
+                                    <p>08:45 PM</p>
+                                </div>
+                            </div>
+
+                            <div className="middlePart">
+                                <WiHumidity/>
+                                <div className="divsmallest">
+                                    <p>Humidity</p>
+                                    <p>{humidity[10]}%</p>
+                                </div>
+                            </div>
+
+                            <div className="middlePart">
+                                <FaWind/>
+                                <div className="divsmallest">
+                                    <p>Wind Speed</p>
+                                    <p>{windSpeed[10]}%</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </section>
+
                 
+                </div>
             </section>
         </>
     )
