@@ -233,7 +233,7 @@ const HomePage=()=>{
 
             {/* second part */}
             <section className="second2">
-                <section className="sectionSecond1">
+                <section className="sectionSecond1 ">
                     <h2>Your #1 source of any weather forecasts and updates.</h2>
                     <p>Stay updated of any weather changes with WeatherWhirl.</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ex, iusto rerum vel voluptatem eaque corporis corrupti dolores molestiae velit doloribus. Dolorum ratione pariatur quas laboriosam inventore? Itaque, officiis quidem?</p>

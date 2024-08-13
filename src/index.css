@@ -57,6 +57,7 @@
   font-size: 1.2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   color: black;
+  overflow: hidden;
 }
 
 .menuStyle .icon{
@@ -421,7 +422,7 @@
 }
 .thirdPart h1{
   font-size: 2rem;
-  line-height: .5rem;
+  /* line-height: .5rem; */
 }
 .section3{
 }
@@ -512,11 +513,16 @@
 }
 @media all and (max-width:500px) {
   .smallerSecond3{
-    width: 60%;
+    width: 70%;
+  }
+}
+@media all and (max-width:450px) {
+  .smallerSecond3{
+    width: 65%;
   }
 }
 @media all and (max-width:400px) {
-  .smallerSecond3 .upper{
+  .smallerSecond3 .upper, .smallerSecond .upper, .smallerSecond2 .upper{
     font-size: 2rem;
   }
   .smallerSecond3{
@@ -526,6 +532,7 @@
 
 .mainFooter{
   padding-top: 5rem;
+  margin-bottom: -1rem;
 }
 
 .footer1,.footer2{
