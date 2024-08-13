@@ -6,12 +6,13 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  margin: -1rem;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  margin: -1rem;
+
 }
 
 .FirstHeader{
@@ -106,6 +107,7 @@
 }
 body{
   position: relative;
+  overflow: hidden;
 }
 .intro{
   background-image: url('/mateus-campos-felipe-K5JcwDBrYKo-unsplash.jpg');
@@ -535,7 +537,8 @@ body{
 
 .mainFooter{
   padding-top: 5rem;
-  margin-bottom: -1rem;
+  margin-bottom: -4rem;
+  overflow: hidden;
 }
 
 .footer1,.footer2{
