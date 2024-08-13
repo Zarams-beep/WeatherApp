@@ -44,7 +44,7 @@
 .stickIt{
   position: fixed;
   top: 15%;
-  right: 0rem;
+  right: 1px;
   z-index: 1000;
   background-color:rgb(214, 212, 212);
   font-weight: bold;
@@ -107,7 +107,7 @@
 }
 body{
   position: relative;
-  width: 100;
+  width: 100%;
   overflow: hidden;
 }
 .intro{
