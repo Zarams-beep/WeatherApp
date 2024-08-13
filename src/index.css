@@ -12,7 +12,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-
+  margin-bottom: -2rem;
 }
 
 .FirstHeader{
@@ -107,7 +107,7 @@
 }
 body{
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   overflow: hidden;
 }
 .intro{
