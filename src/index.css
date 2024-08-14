@@ -14,6 +14,7 @@
   height: 100vh;
   overflow-x: hidden;
   margin-bottom: -2rem;
+  margin-left: -2rem;
 }
 
 .FirstHeader{
@@ -117,7 +118,7 @@ body{
   background-repeat: no-repeat;
   height: auto;
   padding-bottom: 8rem;
-  margin-right: -1rem;
+  margin-right: -3rem;
 
 }
 .section1{
