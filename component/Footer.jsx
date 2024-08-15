@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 const Footer=()=>{
     const [inputValue, setInputValue] = useState('');
     const [validationMessage, setValidationMessage] = useState('');
@@ -20,6 +20,12 @@ const Footer=()=>{
             setValidationMessage('Please enter a valid email address.');
         }
     };
+
+    const myRef = useRef(null)
+
+    useEffect(()=>{
+        myRef.current.focus()
+    },[])
     return(
         <>
            <footer className="mainFooter">
@@ -29,7 +35,7 @@ const Footer=()=>{
 
                 <div className="countIn">
                     <input type="text" name="text" className="input" placeholder="Enter your email"  value={inputValue}
-                    onChange={handleInputChange}/>
+                    onChange={handleInputChange} ref={myRef}/>
                       <button onClick={handleClick}>COUNT ME IN</button>
                 {validationMessage && <p className="validation-message">{validationMessage}</p>}
                 </div>

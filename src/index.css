@@ -12,9 +12,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
+  position: relative;
   overflow-x: hidden;
-  margin-bottom: -2rem;
-  margin-left: -2rem;
 }
 
 .FirstHeader{
@@ -118,7 +117,6 @@ body{
   background-repeat: no-repeat;
   height: auto;
   padding-bottom: 8rem;
-  margin-right: -3rem;
 
 }
 .section1{

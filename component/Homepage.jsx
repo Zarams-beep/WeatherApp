@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { MdArrowOutward } from "react-icons/md";
 import WorldFlags from 'react-world-flags';
 import FloatingSocial from "./FloatingSocial";
+import axios from 'axios';
 
 const HomePage=()=>{
     const [data,setData] = useState([])
