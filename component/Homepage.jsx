@@ -171,10 +171,9 @@ const HomePage=()=>{
     
     return(
         <>
-            <body>
-                
+            <main className="intro">   
             <FloatingSocial/>
-            <main className="intro">
+           
                 <Header/>
                 <div className="section1">
                     <div className="leftPart">
@@ -463,7 +462,7 @@ const HomePage=()=>{
 
                 
                 </div>
-            </section></body>
+            </section>
         </>
     )
 
