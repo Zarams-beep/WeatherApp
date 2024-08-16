@@ -16,6 +16,9 @@
   overflow-x: hidden;
   
 }
+#root{
+  overflow: hidden;
+}
 
 .FirstHeader{
   display: flex;
@@ -45,7 +48,7 @@
 }
 
 .stickIt{
-  position: absolute;
+  position: fixed;
   top: 15%;
   right: 0;
   z-index: 1000;
@@ -113,14 +116,11 @@
   background-position: right;
   object-fit: cover;
   background-repeat: no-repeat;
-  background-size: cover;
   height: auto;
   padding-bottom: 8rem;
-  position: relative;
-  overflow: hidden;
-  left: 0;
-  right: 0;
+
 }
+
 .section1{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
