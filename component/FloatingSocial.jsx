@@ -6,6 +6,7 @@ const FloatingSocial=()=>{
 
     return(
         <>
+              <section className="sticking">
               <div className={`socialMedia invisible ${is600?'stickIt':''}`}>
                             <Link to ="/facebook" className="iconStyle">
                                 <SlSocialFacebook/>
@@ -21,6 +22,7 @@ const FloatingSocial=()=>{
                             </Link>
                            
                         </div>
+              </section>
         </>
     )
 }

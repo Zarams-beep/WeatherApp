@@ -11,13 +11,18 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
-  position: relative;
+  height: 100%;
+  border: 0;
+  outline: 0;
   overflow-x: hidden;
   
 }
+body{
+  width: 100%;
+}
 #root{
   overflow: hidden;
+  width: 100%;
 }
 
 .FirstHeader{
@@ -28,7 +33,6 @@
   padding-right: 4rem;
   box-shadow: 0 0 2px 0.5px rgba(0, 0, 0, 0.3);
   position: relative;
-  width: 100%;
 }
 
 .contactSection{
@@ -46,11 +50,10 @@
 .invisible{
   display: none;
 }
-
 .stickIt{
   position: fixed;
   top: 15%;
-  right: 0;
+  right: 1px;
   z-index: 1000;
   background-color:rgb(214, 212, 212);
   font-weight: bold;
@@ -118,9 +121,7 @@
   background-repeat: no-repeat;
   height: auto;
   padding-bottom: 8rem;
-
 }
-
 .section1{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
